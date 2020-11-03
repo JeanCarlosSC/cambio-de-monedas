@@ -1,11 +1,13 @@
 package swingRAD
 
+import swingRAD.mainBar.MainBar
 import java.awt.*
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 import javax.swing.*
 import javax.swing.border.Border
 
+//JPanel-----------------------------------------------------------------------------------------
 fun JPanel.setProperties(x: Int=0, y: Int=0, width: Int=0, height: Int=0, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
                          layout: LayoutManager? = null) {
     this.setBounds(x, y, width, height)
@@ -14,6 +16,7 @@ fun JPanel.setProperties(x: Int=0, y: Int=0, width: Int=0, height: Int=0, backgr
     this.layout = layout
 }
 
+//JLabel-----------------------------------------------------------------------------------------
 /**
  * icon label
  */
@@ -42,6 +45,7 @@ fun JLabel.setProperties(x: Int, y: Int, width: Int, height: Int, str: String? =
     }
 }
 
+//JFrame-----------------------------------------------------------------------------------------
 fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color? = megaDarkGray, undecorated: Boolean = true,
          border: Border? = blackBorderTransparent, relativeLocation: Component? = null, visible: Boolean = true,
          layout: LayoutManager? = null) {
@@ -55,6 +59,20 @@ fun JFrame.setProperties(width: Int = 1280, height: Int = 720, background: Color
     this.isVisible = visible
 }
 
+fun JFrame.setMainBar(title: String, pathLogo: String = "resources/exampleLogo.png") {
+    val mainBar = MainBar(this)
+    mainBar.setTitle(title)
+    mainBar.setLogo(ImageIcon(pathLogo))
+    this.add(mainBar)
+}
+
+fun JFrame.setBackground(path: String) {
+    val background = JLabel()
+    background.setProperties(0, 0, ImageIcon(path))
+    this.add(background)
+}
+
+//JButton-----------------------------------------------------------------------------------------
 /**
  * Icon button
  */
@@ -118,6 +136,7 @@ fun JButton.setProperties( x: Int,y: Int, width: Int, height: Int, cursor: Curso
     this.isContentAreaFilled = isSolid
 }
 
+//JTextArea-----------------------------------------------------------------------------------------
 fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, editable: Boolean = true, lineWrap: Boolean = true, text: String? = "",
                             foreground: Color? = darkWhite, background: Color? = darkGray, font: Font? = fontText, border: Border? = semiDarkGray2Border) {
     this.setBounds(x, y, width, height)
@@ -132,6 +151,7 @@ fun JTextArea.setProperties(x: Int, y: Int, width: Int, height: Int, editable: B
     this.lineWrap = lineWrap
 }
 
+//JTextField-----------------------------------------------------------------------------------------
 fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: Boolean = true, text: String? = "", foreground: Color? = darkWhite,
                             background: Color? = darkGray, font: Font? = fontText, border: Border? = semiDarkGray2Border) {
     this.setBounds(x, y, width, height)
@@ -144,6 +164,7 @@ fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: 
     this.border = border
 }
 
+//JTable-----------------------------------------------------------------------------------------
 fun JTable.getPanelBar(x: Int, y: Int, width: Int, height: Int, background: Color = semiDarkGrayBlue, border: Border? = null): JScrollPane {
     val panelScroll = JScrollPane(this)
     panelScroll.setLocation(x, y)
