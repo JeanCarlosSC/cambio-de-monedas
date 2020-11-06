@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 import javax.swing.*
 import javax.swing.border.Border
+import javax.swing.table.DefaultTableModel
 
 //JPanel-----------------------------------------------------------------------------------------
 fun JPanel.setProperties(x: Int=0, y: Int=0, width: Int=0, height: Int=0, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border,
@@ -164,7 +165,7 @@ fun JTextField.setProperties(x: Int, y: Int, width: Int, height: Int, editable: 
     this.border = border
 }
 
-//JTable-----------------------------------------------------------------------------------------
+//JTable--------------------------------------------------------------------------------------------
 fun JTable.getPanelBar(x: Int, y: Int, width: Int, height: Int, background: Color = semiDarkGrayBlue, border: Border? = null): JScrollPane {
     val panelScroll = JScrollPane(this)
     panelScroll.setLocation(x, y)
@@ -174,6 +175,14 @@ fun JTable.getPanelBar(x: Int, y: Int, width: Int, height: Int, background: Colo
     return panelScroll
 }
 
+fun JTable.setProperties(modelo: DefaultTableModel) {
+    this.model = modelo
+    this.rowHeight = 40
+    this.setDefaultRenderer(Any::class.java, getCustomTable())
+    this.gridColor = black
+}
+
+//JScrollPane----------------------------------------------------------------------------------------
 fun JScrollPane.setProperties(x: Int, y: Int, width: Int, height: Int, background: Color? = semiDarkGrayBlue, border: Border? = semiDarkGray2Border){
     this.setBounds(x, y, width, height)
     this.verticalScrollBar.setUI(getCustomScroll())
