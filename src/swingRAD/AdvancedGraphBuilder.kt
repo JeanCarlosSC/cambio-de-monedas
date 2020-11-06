@@ -14,8 +14,8 @@ import javax.swing.table.DefaultTableCellRenderer
 /** @author Cristian Felipe Patiño Cáceres
  * @contributor Jean Carlos Santoya Cabrera */
 
-fun getCustomTable(colorPrincipal: Color?, colorSecundario: Color?, colorSeleccion: Color?, colorFuente: Color?, fuente: Font?
-): DefaultTableCellRenderer {
+fun getCustomTable(colorPrincipal: Color? = semiDarkGrayBlue, colorSecundario: Color? = semiDarkGrayBlue, colorSeleccion: Color? = mdb1,
+                   colorFuente: Color? = darkWhite, fuente: Font? = fontText): DefaultTableCellRenderer {
     return object : DefaultTableCellRenderer() {
         override fun getTableCellRendererComponent(
             table: JTable?, value: Any?, isSelected: Boolean, hasFocus: Boolean, row: Int, column: Int

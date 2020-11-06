@@ -12,21 +12,6 @@ val black = Color(0, 0, 0)
 val red = Color(255, 0, 0)
 val white = Color(255, 255, 255)
 
-//dark theme based on intellij idea
-val semiDarkGrayBlue = Color(60, 63, 65) //main background
-val darkGray = Color(49, 51, 53) //second background
-val megaDarkGray = Color(43, 43, 43) //console background
-val semiDarkGray2 = Color(85, 85, 85)//console border
-val darkWhite = Color(187,187,187) //main color font
-val semiDarkGray = Color(114, 115, 122) //var names without use font
-val gray = Color(124, 123, 119) //comment font
-val grayPurple = Color(152, 118, 168) //var names in use font
-val lightGrayGreen = Color(106, 135, 89) //string font
-val greenGray = Color(98,148, 82) //javadoc font
-val orangeGray = Color(199,118,50) //reserve word font
-val lightBlueGray = Color(104,150,186) //numbers font
-val semiDarkGray3 = Color(81, 81, 81) //mainToolbar bottom border
-
 //green complementary cake
 val gcc1 = Color(193, 255, 171)
 val gcc2 = Color(122, 179, 102)
@@ -64,6 +49,23 @@ val superLightGray = Color(120, 120, 120)
 val megaDarkWhite = Color(180, 180, 180)
 val semiDarkWhite = Color(210, 210, 210)
 
+//--------------------------------------COLOR THEMES--------------------------------------------------------------------
+
+//dark theme based on intellij idea
+val semiDarkGrayBlue = Color(60, 63, 65) //main background
+val darkGray = Color(49, 51, 53) //second background
+val megaDarkGray = Color(43, 43, 43) //console background
+val semiDarkGray2 = Color(85, 85, 85)//console border
+val darkWhite = Color(187,187,187) //main color font
+val semiDarkGray = Color(114, 115, 122) //var names without use font
+val gray = Color(124, 123, 119) //comment font
+val grayPurple = Color(152, 118, 168) //var names in use font
+val lightGrayGreen = Color(106, 135, 89) //string font
+val greenGray = Color(98,148, 82) //javadoc font
+val orangeGray = Color(199,118,50) //reserve word font
+val lightBlueGray = Color(104,150,186) //numbers font
+val semiDarkGray3 = Color(81, 81, 81) //mainToolbar bottom border
+
 //-----------------------------------------FONTS------------------------------------------------------------------------
 //Windows standard
 val fontTitle = Font("Arial", Font.BOLD, 28)
@@ -96,7 +98,9 @@ val moveCursor = Cursor(13)
 //----------------------------------------BORDERS-----------------------------------------------------------------------
 //standard
 val blackBorder: Border = BorderFactory.createLineBorder(black, 2, false)
+val transparentBorder: Border = BorderFactory.createLineBorder(transparent, 2, false)
 val blackBorderTransparent: Border = BorderFactory.createLineBorder(blackTransparent, 2, false)
+val semiDarkGrayBlueBorder: Border = BorderFactory.createLineBorder(semiDarkGrayBlue, 2, false)
 val grayBorder: Border = BorderFactory.createLineBorder(gray, 2, false)
 val semiDarkGray2Border: Border = BorderFactory.createLineBorder(semiDarkGray2, 2, false)
 val darkGrayBorder: Border = BorderFactory.createLineBorder(darkGray, 2, false)
