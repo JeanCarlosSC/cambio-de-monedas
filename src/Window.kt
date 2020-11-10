@@ -187,7 +187,7 @@ class Window: JFrame() {
             } else {
                 JOptionPane.showMessageDialog(
                     null, calcularComposicion(algoritmo.composicion[cantidadMonedas][valorVuelta],
-                        modelo.getValueAt(cantidadMonedas-1, valorVuelta).toString())
+                        modelo.getValueAt(cantidadMonedas-1, valorVuelta+1).toString())
                 )
                 ""
             }
